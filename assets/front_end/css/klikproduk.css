@@ -1,0 +1,158 @@
+/*--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+--*/
+
+/*-- effect --*/
+.men-pro-item {
+    position: relative;
+    box-shadow: 0px 0px 15px 0px #D6D6D6;
+    padding-bottom: 20px;
+}
+.men-thumb-item {
+    position: relative;
+}
+.item-info-product {
+    text-align: center;
+    margin: 20px 0 0;
+}
+.men-thumb-item::before {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    opacity: 0;
+    z-index: 9;
+    visibility: hidden;
+    transition: all 0.5s ease-out 0s;
+}
+.men-thumb-item .pro-image-front {
+    opacity: 1;
+    visibility: visible;
+}
+.men-thumb-item img {
+    transition: all 0.5s ease-out 0s;
+}
+.pro-image-back {
+    transform: rotateY(180deg);
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.men-thumb-item img {
+    transition: all 0.5s ease-out 0s;
+}
+.men-cart-pro {
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    transition: all 0.5s ease-out 0s;
+    visibility: hidden;
+    z-index: 10;
+}
+.product-new-top {
+    background:#fc636b none repeat scroll 0 0;
+    color: #fff;
+    display: inline-block;
+    right: 0;
+    padding: 0 10px 1px;
+    position: absolute;
+    top: 0;
+    z-index:99;
+}
+.inner-men-cart-pro {
+    height: 100%;
+    position: relative;
+    width: 100%;
+    transition: all 0.5s ease-out 0s;
+}
+.inner-men-cart-pro ul {
+    left: 0;
+    margin: -60px 0 0;
+    padding: 0;
+    position: absolute;
+    top: 45%;
+    width: 100%;
+    transition: all 0.5s ease-out 0s;
+}
+.inner-men-cart-pro .link-product-add-cart {
+    width: 100%;
+    bottom: -40px;
+    left: 0;
+    position: absolute;
+    transition: all 0.5s ease-out 0s;
+}
+.link-product-add-cart {
+    background:#000 none repeat scroll 0 0;
+    color: #fff;
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+    text-transform: uppercase;
+    transition: all 0.5s ease-out 0s;
+}
+.inner-men-cart-pro > ul > li {
+    display: inline-block;
+}
+.inner-men-cart-pro ul li a {
+    color: #fff;
+    transition: all 0.5s ease-out 0s;
+    display: block;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+}
+.men-thumb-item:hover {
+    cursor: pointer;
+}
+.men-thumb-item:hover::before {
+    opacity: 1;
+    visibility: visible;
+}
+.men-thumb-item:hover .pro-image-front {
+    transform: rotateY(180deg);
+    opacity: 0;
+    visibility: hidden;
+}
+.men-thumb-item:hover .pro-image-back {
+    transform: rotateY(0deg);
+    opacity: 1;
+    visibility: visible;
+    background: #f7f7f7;
+}
+.men-thumb-item img {
+    transition: all 0.5s ease-out 0s;
+    padding: 52px 50px 20px;
+}
+.men-thumb-item:hover .men-cart-pro {
+    opacity: 1;
+    visibility: visible;
+}
+.men-thumb-item:hover .inner-men-cart-pro ul {
+    margin: 20px 0 0;
+}
+.inner-men-cart-pro ul li a:hover {
+    background: #ffc229 none repeat scroll 0 0;
+}
+.inner-men-cart-pro .link-product-add-cart {
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    transition: all 0.5s ease-out 0s;
+}
+.men-thumb-item:hover .inner-men-cart-pro .link-product-add-cart {
+    top: 83.5%;
+}

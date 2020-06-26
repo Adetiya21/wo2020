@@ -1,0 +1,43 @@
+/*----------------------------------------- 2) Preloader --------------------------------------------------*/
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  z-index: 999999;
+}
+#status {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  background-image: url(../../images/load/loader.gif);
+  background-repeat: no-repeat;
+  background-position: center center;
+  text-align: center;
+  margin: -40px 0 0 -100px;
+}
+#status img {
+  text-align: center;
+  margin-top: -80px;
+}
+
+/*preloader*/
+#loading {
+  position: fixed;
+  top: 0;
+  left: 100px;
+  right: 0;
+  bottom: 0;
+  background: #fbfbfb;
+  z-index: 999999;
+  /*background: #fff url(../../images/load/loader.gif) no-repeat;*/
+  /*background-size: 100%;*/
+  background-position: center center;
+  text-align: center;
+  margin: -40px 0 0 -100px;
+  font-family: 'Open Sans', sans-serif;
+  }
