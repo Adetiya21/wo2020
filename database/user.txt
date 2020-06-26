@@ -1,0 +1,14 @@
+admin:
+http://localhost/wo2020/admin/welcome.html
+username : 0
+password : 0
+
+vendor:
+http://localhost/wo2020/vendor/welcome.html
+username : vendor1@vendor.com - vendor3@vendor.com
+password : 123456
+
+member:
+http://localhost/wo2020/
+username : member1@member.com
+password : 123456
