@@ -27,8 +27,8 @@
 				<div class="page-header-title">
 					<i class="feather icon-layout bg-c-blue"></i>
 					<div class="d-inline">
-						<h5>Semua Pesanan Produk</h5>
-						<span>Berikut daftar semua pesanan produk.</span>
+						<h5>Semua Invoice Pesanan Produk</h5>
+						<span>Berikut daftar semua Invoice pesanan produk.</span>
 					</div>
 				</div>
 			</div>
@@ -42,7 +42,7 @@
 							<a href="<?= site_url('vendor/produk') ?>">Produk</a>
 						</li>
 						<li class="breadcrumb-item">
-							<a href="<?= site_url('vendor/pesanan') ?>">Semua Pesanan</a>
+							<a href="<?= site_url('vendor/pesanan') ?>">Invoice Pesanan</a>
 						</li>
 					</ul>
 				</div>
@@ -56,7 +56,7 @@
 				<div class="page-body">
 					<div class="card">
 						<div class="card-header">
-							<h5>Data Semua Pesanan Produk</h5>
+							<h5>Data Invoice Pesanan Produk</h5>
                             <div class="card-header-right"> <ul class="list-unstyled card-option"> <li class="first-opt"><i class="feather icon-chevron-left open-card-option"></i></li> <li><i class="feather icon-maximize full-card"></i></li> <li><i class="feather icon-minus minimize-card"></i></li> <li><i class="feather icon-refresh-cw reload-card"></i></li> <li><i class="feather icon-trash close-card"></i></li> <li><i class="feather icon-chevron-left open-card-option"></i></li> </ul> </div>
 						</div>
 						<div class="card-block">

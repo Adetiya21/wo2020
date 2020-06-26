@@ -20,15 +20,23 @@ class Home extends CI_Controller {
 	public function index()
 	{
 		$title = array('title' => 'Dashboard', );
-		$data['guru'] = $this->DButama->GetDB('tb_guru')->num_rows();
+		$data['vendor'] = $this->DButama->GetDB('tb_vendor')->num_rows();
 		$data['admin'] = $this->DButama->GetDB('tb_admin')->num_rows();
-		$data['siswa'] = $this->DButama->GetDB('tb_siswa')->num_rows();
-		$data['mp'] = $this->DButama->GetDB('tb_mapel')->num_rows();
-		$data['kl'] = $this->DButama->GetDB('tb_kelas')->num_rows();
-		$data['kelas'] = $this->db->order_by('nama_kelas', 'asc');
-		$data['kelas'] = $this->DButama->GetDB('tb_kelas');
-		$data['mapel'] = $this->db->order_by('nama_mapel', 'asc');
-		$data['mapel'] = $this->DButama->GetDB('tb_mapel');
+		$data['member'] = $this->DButama->GetDB('tb_member')->num_rows();
+		$data['kategori'] = $this->DButama->GetDB('tb_kategori_produk')->num_rows();
+		$data['produk'] = $this->DButama->GetDB('tb_produk')->num_rows();
+		$data['invoice'] = $this->DButama->GetDB('tb_invoice')->num_rows();
+
+		$data['ventunggu'] = $this->DButama->GetDBWhere('tb_vendor', array('status' => 'Menunggu'))->num_rows();
+		$data['venterima'] = $this->DButama->GetDBWhere('tb_vendor', array('status' => 'Diterima'))->num_rows();
+
+		$data['imp'] = $this->DButama->GetDBWhere('tb_invoice', array('status' => 'Menunggu Pembayaran'))->num_rows();
+		$data['ip'] = $this->DButama->GetDBWhere('tb_invoice', array('status' => 'Proses'))->num_rows();
+		$data['ipd'] = $this->DButama->GetDBWhere('tb_invoice', array('status' => 'Pembayaran Dikonfirmasi'))->num_rows();
+		$data['idk'] = $this->DButama->GetDBWhere('tb_invoice', array('status' => 'Dikirim'))->num_rows();
+		$data['isl'] = $this->DButama->GetDBWhere('tb_invoice', array('status' => 'Selesai'))->num_rows();
+		$data['idb'] = $this->DButama->GetDBWhere('tb_invoice', array('status' => 'Dibatalkan'))->num_rows();
+		
 		$data['title'] = 'Dashboard';
 		$this->load->view('admin/temp-header',$data);
 		$this->load->view('admin/v_index');

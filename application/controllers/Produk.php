@@ -181,6 +181,61 @@ class Produk extends CI_Controller {
         }
     }
 
+    function tambah_ulasan()
+    {
+        if ($this->input->method() == "post") {
+            $data_star = $this->input->post('star');
+            if ($data_star== "1") {
+                $rating_1=1;
+                $rating_2=0;
+                $rating_3=0;
+                $rating_4=0;
+                $rating_5=0;
+            }elseif ($data_star== "2") {
+                $rating_1=0;
+                $rating_2=1;
+                $rating_3=0;
+                $rating_4=0;
+                $rating_5=0;
+            }elseif ($data_star== "3") {
+                $rating_1=0;
+                $rating_2=0;
+                $rating_3=1;
+                $rating_4=0;
+                $rating_5=0;
+            }elseif ($data_star== "4") {
+                $rating_1=0;
+                $rating_2=0;
+                $rating_3=0;
+                $rating_4=1;
+                $rating_5=0;
+            }elseif ($data_star== "5") {
+                $rating_1=0;
+                $rating_2=0;
+                $rating_3=0;
+                $rating_4=0;
+                $rating_5=1;
+            }
+            $data = array(
+                'id_produk' => $this->input->post('id_produk'),
+                'nama' => $this->input->post('nama'),
+                'email' => $this->input->post('email'),
+                'tgl' => date('Y-m-d'),
+                'rating_1' => $rating_1,
+                'rating_2' => $rating_2,
+                'rating_3' => $rating_3,
+                'rating_4' => $rating_4,
+                'rating_5' => $rating_5,
+                'ulasan' => $this->input->post('ulasan'),
+            );
+            $insert = $this->DButama->AddDB('tb_ulasan',$data);
+            echo "<script>
+            alert('Terima kasih atas review anda');";
+            echo 'history.go(-1)
+            </script>';
+        }
+    }
+
 }
 
 /* End of file Produk.php */

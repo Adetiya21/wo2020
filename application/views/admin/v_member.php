@@ -367,19 +367,6 @@
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <!-- <div class="form-group">
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Foto</label><br>
-                                    <div class="form-group" id="photo-preview">
-                                        <div class="col-md-9">
-                                            (Tidak ada photo)
-                                            <span class="help-block"></span>
-                                        </div>
-                                    </div>
-                                    <input id="uploadImage" type="file" name="gambar" onchange="PreviewImage();" class="form-control" />
-                                    <p class="help-block">Max. 2MB</p>
-                                </div>
-                            </div> -->
                             <div class="form-group">
                                 <label >Alamat</label>
                                 <textarea class="form-control" name="alamat" required placeholder="Alamat" /></textarea>
@@ -392,7 +379,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label >Email</label>
-                                        <input type="text" class="form-control" placeholder="Email" name="email" required/>
+                                        <input type="email" class="form-control" placeholder="Email" name="email" required/>
                                         <span class="help-block"></span>
                                     </div>
                                 </div>

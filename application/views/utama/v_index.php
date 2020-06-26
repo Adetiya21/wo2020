@@ -87,6 +87,9 @@
                                 <?php $attributes = array('class' => 'form-item'); ?>
                                 <?= form_open('', $attributes); ?>
                                     <input type="hidden" name="id" value="<?php echo $key1->id; ?>">
+                                    <?php foreach ($ven->result() as $key2) {
+                                        if ($key2->id==$key1->id_vendor) { ?>
+                                    <input type="hidden" name="vendor" value="<?php echo $key2->nama; }}?>">
                                     <a href="<?php echo site_url('produk/detail/'.$key1->slug) ?>" class="btn btn-template-transparent-black"><i class="glyphicon glyphicon-eye-open"></i> Detail</a>
                                     <button type="submit" class="btn btn-template-transparent-primary"><i class="glyphicon glyphicon-shopping-cart"></i> Order</</button>
                                 <?= form_close(); ?>     

@@ -184,11 +184,6 @@ class Produk extends CI_Controller {
 
 				$this->DButama->UpdateDB($this->table,$where,$data);
 				redirect('vendor/produk','refresh');
-        // jika username di ganti ternyata duplikat
-			}elseif ($cari_username->num_rows() == 1) {
-            # code...
-				$this->session->set_flashdata('error', 'Nama Produk Sama / Tidak Boleh Duplikat');
-				redirect('vendor/produk/edit/'.$this->input->post('id'),'refresh');
         // jika username di ganti
 			}else{
 				$slug = url_title($this->input->post('nama'), 'dash', TRUE);

@@ -226,7 +226,7 @@
                 $('[name="alamat"]').val(data.alamat);
                 $('[name="status"]').val(data.status);
                 $('[name="email"]').val(data.email);
-                $('[name="password"]').val(data.password);
+                // $('[name="password"]').val(data.password);
                 $('#modal_form').modal('show'); // show bootstrap modal when complete loaded
                 $('.modal-title').text('Edit Vendor'); // Set title to Bootstrap modal title
                 if(data.gambar)
@@ -368,12 +368,12 @@
                                 <input type="hidden" name="id"/>
                                 <div class="form-group">
                                     <label >Nama Vendor</label>
-                                    <input type="text" class="form-control" placeholder="Nama User" name="nama" required/>
+                                    <input type="text" class="form-control" placeholder="Nama Vendor" name="nama" required/>
                                     <span class="help-block"></span>
                                 </div>
                                 <div class="form-group">
                                     <label >No Telp</label>
-                                    <input type="text" class="form-control" placeholder="Nilai" name="no_telp" onkeypress='return check_int(event)' maxlength="13" onchange="changeValue(this.value)" required/>
+                                    <input type="text" class="form-control" placeholder="No Telp" name="no_telp" onkeypress='return check_int(event)' maxlength="13" onchange="changeValue(this.value)" required/>
                                     <span class="help-block"></span>
                                 </div>
                                 <div class="form-group">
@@ -453,12 +453,12 @@
                                 <input type="hidden" name="id"/>
                                 <div class="form-group">
                                     <label >Nama Vendor</label>
-                                    <input type="text" class="form-control" placeholder="Nama User" name="nama" readonly/>
+                                    <input type="text" class="form-control" placeholder="Nama Vendor" name="nama" readonly/>
                                     <span class="help-block"></span>
                                 </div>
                                 <div class="form-group">
                                     <label >No Telp</label>
-                                    <input type="text" class="form-control" placeholder="Nilai" name="no_telp" onkeypress='return check_int(event)' maxlength="13" onchange="changeValue(this.value)" readonly/>
+                                    <input type="text" class="form-control" placeholder="No Telp" name="no_telp" onkeypress='return check_int(event)' maxlength="13" onchange="changeValue(this.value)" readonly/>
                                     <span class="help-block"></span>
                                 </div>
                                 <div class="form-group">

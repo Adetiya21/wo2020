@@ -354,7 +354,7 @@
                                         <div class="col-sm-12 text-center">
                                             <h4 style="text-transform: capitalize;"><?php echo $key1->nama ?></h4>
                                             <p><a href="mailto:<?php echo $key1->email ?>" title="email"><?php echo $key1->email ?></a></p>
-                                            <p style="font-size: 10px"><?php echo $key1->tgl ?></p>
+                                            <p style="font-size: 10px"><?php echo date('d F Y', strtotime($key1->tgl)) ?></p>
                                             <p><?php echo $key1->ulasan ?></p>
                                             <div class="review-block-rate">
                                                 <?php if ($key1->rating_5=='1') {  ?>
@@ -464,7 +464,7 @@
                         <div class="col-sm-12">
                             <!-- <input type="text" name="id_produk" value="<?php echo $this->uri->segment(3);  ?>" class="form-control" id="firstname"> -->
                             <input type="hidden" name="id_produk" value="<?= $key->id;  ?>" class="form-control" id="firstname">
-                            <input type="hidden" name="nama_user" value="<?php echo $this->session->userdata('nama_user');  ?>" class="form-control" id="firstname">
+                            <input type="hidden" name="nama" value="<?php echo $this->session->userdata('nama');  ?>" class="form-control" id="firstname">
                             <input type="hidden" name="email" value="<?php echo $this->session->userdata('email');  ?>" class="form-control" id="email">
                         </div>
                         <div class="col-sm-12">
@@ -493,7 +493,7 @@
                         </div>
                         <div class="col-sm-12 text-center">
                             <hr>
-                            <button type="submit" class="btn btn-lg btn-warning" style="width: 100%"><i class="fa fa-location-arrow"></i> Send Reviews</button>
+                            <button type="submit" class="btn btn-lg btn-warning" style="width: 100%"><i class="fa fa-location-arrow"></i> Kirim Reviews</button>
 
                         </div>
                         <?php } ?>

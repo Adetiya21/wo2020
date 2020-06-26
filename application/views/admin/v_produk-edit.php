@@ -118,7 +118,7 @@
 				                      		</span>
 				                      		<input type="text" name="harga" class="form-control" placeholder="Harga" maxlength="8" onkeypress='return check_int(event)' id="hargaasli" value="<?= $produk->harga ?>">
 				                      	</div>
-			                      		<span style="font-weight: bold" id="jmlh">Kamu akan mendapatkan (Rp): <span id="earned_price" class="earned-price">0,00</span>. ~(Komisi Admin 2%)~</span>
+			                      		<span style="font-weight: bold" id="jmlh">Vendor akan mendapatkan (Rp): <span id="earned_price" class="earned-price">0,00</span>. ~(Komisi Admin 2%)~</span>
 				                      </div>
 				                    </div>
 				                    <div class="form-group row">

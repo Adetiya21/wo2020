@@ -54,6 +54,7 @@ class Welcome extends CI_Controller {
 							$sess_data['vendor_logged_in'] = "Sudah_Loggin";
 							$sess_data['nama'] = $key->nama;
 							$sess_data['email'] = $key->email;
+							$sess_data['gambar'] = $key->gambar;
 							$sess_data['id'] = $key->id;
 							$this->session->set_userdata($sess_data);
 							$this->session->unset_userdata('user_logged_in');

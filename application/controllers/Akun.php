@@ -49,7 +49,7 @@ class Akun extends CI_Controller {
 				$where = array('email' => $this->session->userdata('email') );
 				$this->DButama->UpdateDB('tb_member',$where,$data);
 
-				$sess_data['nama_user'] = $this->input->post('nama');
+				$sess_data['nama'] = $this->input->post('nama');
 				$this->session->set_userdata($sess_data);
 				$this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible" role="alert">
 							<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>

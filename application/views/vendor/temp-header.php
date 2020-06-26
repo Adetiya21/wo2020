@@ -64,7 +64,11 @@
 							<li class="user-profile header-notification">
 								<div class="dropdown-primary dropdown">
 									<div class="dropdown-toggle" data-toggle="dropdown">
-										<img src="<?= base_url('assets/') ?>assets/img/user.jpg" class="img-radius" alt="User-Profile-Image">
+										<?php if ($this->session->userdata('gambar')==null) {
+											echo '<img src="'.base_url('assets/').'assets/img/user.jpg" class="img-radius" alt="User-Profile-Image">';
+										} else { ?>
+										<img src="<?= base_url('assets/') ?>assets/img/vendor/<?= $this->session->userdata('gambar')?>" class="img-radius" alt="User-Profile-Image">
+										<?php } ?>
 										<span><?php echo $this->session->userdata('nama')?></span>
 										<i class="feather icon-chevron-down"></i>
 									</div>
@@ -158,7 +162,7 @@
 										<ul class="pcoded-submenu">
 											<li class="pesanan-produk">
 												<a href="<?= site_url('vendor/pesanan/') ?>" class="waves-effect waves-dark">
-													<span class="pcoded-mtext"></span> Semua Pesanan Produk
+													<span class="pcoded-mtext"></span> Semua Invoice Pesanan
 												</a>
 											</li>
 											<li class="pesanan-saya">

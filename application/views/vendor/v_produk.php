@@ -61,8 +61,8 @@
 						</div>
 						
 						<div class="card-block">
-							<div class="dt-responsive table-responsive">
-								<table id="compact" class="table table-bordered table-hover nowrap" width="100%">
+							<div class="dt-responsive">
+								<table id="compact" class="table table-responsive table-bordered table-hover nowrap" width="100%">
 									<thead>
 										<tr><th width="1%">No</th>
 										<th width="100px">Gambar</th>

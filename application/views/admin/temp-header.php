@@ -168,7 +168,7 @@
 									<li class="pesanan">
 										<a href="<?= site_url('admin/pesanan/') ?>" class="waves-effect waves-dark">
 											<span class="pcoded-micon">
-												<i class="feather icon-briefcase"></i>
+												<i class="feather icon-shopping-cart"></i>
 											</span>
 											<span class="pcoded-mtext">Pesanan</span>
 										</a>

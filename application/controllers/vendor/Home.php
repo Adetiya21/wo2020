@@ -16,6 +16,42 @@ class Home extends CI_Controller {
 		}
 	}
 
+	public function index()
+	{
+		$cek = $this->DButama->GetDBWhere($this->table,array('id'=> $this->session->userdata('id')));
+		if ($cek->num_rows() == 1) {
+			$data['profil'] = $cek->row();
+			$data['title'] = 'Dashboard';
+			
+			$data['kategori'] = $this->DButama->GetDB('tb_kategori_produk')->num_rows();
+			
+			$data['produk'] = $this->DButama->GetDB('tb_produk')->num_rows();
+			$data['produk_saya'] = $this->DButama->GetDBWhere('tb_produk', array('id_vendor' => $this->session->userdata('id') ))->num_rows();
+			
+			$data['invoice'] = $this->DButama->GetDB('tb_invoice')->num_rows();
+			$data['pesanan'] = $this->DButama->GetDB('tb_orders')->num_rows();
+			$data['pesanan_saya'] = $this->DButama->GetDBWhere('tb_orders', array('nama_vendor' => $this->session->userdata('nama') ))->num_rows();
+			// $data['guru'] = $this->DButama->GetDBWhere('tb_guru', array('id_mapel' => $this->session->userdata('id_mapel') ))->num_rows();
+			// $data['kelas'] = $this->DButama->GetDBWhere('tb_kelas', array('id' => $this->session->userdata('id_kelas') ))->row();
+			// $data['mapel'] = $this->DButama->GetDBWhere('tb_mapel', array('id' => $this->session->userdata('id_mapel') ))->row();
+
+			// $where = array('tb_nilaisiswa.id_mapel' => $this->session->userdata('id_mapel'));
+			// $where1 = array('tb_nilaisiswa.id_kelas' => $this->session->userdata('id_kelas'));
+			// $query = $this->db->where($where);
+			// $query = $this->db->where($where1);	
+			// $query = $this->db->select('id, sum(h1) as jh1, sum(h2) as jh2, sum(h3) as jh3, sum(uts) as juts, sum(uas) as juas, sum(total) as jtotal, sum(rata) as jrata');	
+			// $query = $this->db->from('tb_nilaisiswa');
+			// $query = $this->db->get();
+			// $data['nilai'] = $query->row();
+			
+			$this->load->view('vendor/temp-header',$data);
+			$this->load->view('vendor/v_index',$data);
+			$this->load->view('vendor/temp-footer');
+		}else{
+			redirect('error404','refresh');
+		}
+	}
+
 	public function profil()
 	{
 		$cek = $this->DButama->GetDBWhere($this->table,array('id'=> $this->session->userdata('id')));

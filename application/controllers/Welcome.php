@@ -22,7 +22,7 @@ class Welcome extends CI_Controller {
 		$data['title'] = 'Selamat Datang';
 		$data['kategory_produk'] =  $this->db->order_by('nama', 'asc');
 		$data['kategory_produk'] = $this->DButama->GetDB('tb_kategori_produk');
-		$data['pr'] = $this->db->order_by('nama', 'asc');
+		$data['pr'] = $this->db->order_by('tgl', 'desc');
 		$data['pr'] = $this->db->limit('5');
 		$data['pr'] = $this->DButama->GetDB('tb_produk');
         $data['ven'] = $this->DButama->GetDB('tb_vendor');

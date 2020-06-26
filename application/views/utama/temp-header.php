@@ -106,8 +106,8 @@ $tag = array('Wedding Organizer',$title.'|  Wedding Organizer' ,'Borneo', 'Ponti
                                         <?php
                                     }else{
                                         ?>
-                                        <a href="#" onclick="login()"><span class="text-uppercase"><i class=" fa fa-sign-in"></i> <span class="text-uppercase">Login</span></a>
-                                        <a href="#" onclick="tambah()"><span class="text-uppercase">Daftar</span></a>
+                                        <a href="javascript:void(0)" onclick="login()"><span class="text-uppercase"><i class=" fa fa-sign-in"></i> <span class="text-uppercase">Login</span></a>
+                                        <a href="javascript:void(0)" onclick="tambah()"><span class="text-uppercase">Daftar</span></a>
                                         <?php
                                     }
                                     ?>
@@ -200,7 +200,7 @@ $tag = array('Wedding Organizer',$title.'|  Wedding Organizer' ,'Borneo', 'Ponti
                             <input type="hidden" name="id" required/>
                             <div class="col-lg-12">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Email" name="email" required/>
+                                    <input type="email" class="form-control" placeholder="Email" name="email" required/>
                                     <span class="help-block"></span>
                                 </div>
                             </div>
@@ -247,7 +247,7 @@ $tag = array('Wedding Organizer',$title.'|  Wedding Organizer' ,'Borneo', 'Ponti
                             </div>
                             <div class="col-lg-12">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Email" name="email" required/>
+                                    <input type="email" class="form-control" placeholder="Email" name="email" required/>
                                     <span class="help-block"></span>
                                 </div>
                             </div>

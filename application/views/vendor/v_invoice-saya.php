@@ -68,7 +68,7 @@
                                         <th>Gambar Produk</th>
                                         <th>Nama Produk</th>
                                         <th>Tanggal Booking</th>
-                                        <th>Pemesan</th>
+                                        <th>Harga</th>
 										<th>Status</th>
                                         <th width="10%">Action</th>
 										</tr>
@@ -143,11 +143,29 @@
         },
     	{"data": "nama_produk"},
     	{"data": "tgl_booking"},
-    	{"data": "email"},
+    	{"data": "harga_produk",
+    		render: function(data) {
+    			total = data;
+    			data = data-(data*2/100);
+    			// return 'Awal : '+total+'<br>Diterima: '+data;
+
+    			var reverse = total.toString().split('').reverse().join(''),
+	            tribuan  = reverse.match(/\d{1,3}/g);
+	            tribuan  = tribuan.join('.').split('').reverse().join('');
+
+	            var reverse = data.toString().split('').reverse().join(''),
+	            dribuan  = reverse.match(/\d{1,3}/g);
+	            dribuan  = dribuan.join('.').split('').reverse().join('');
+
+	            return 'Rp. '+tribuan+',-<hr>Diterima : <br> Rp. '+dribuan+',-';
+	            // return 'Rp. '+ribuan;
+    		},
+              defaultContent: 'Gambar'
+    	},
         {"data": "status"},
     	{"data": "view","orderable": false}
     	],
-    	order: [[3, 'desc']],
+    	order: [[3, 'asc']],
     	rowCallback: function(row, data, iDisplayIndex) {
     		var info = this.fnPagingInfo();
     		var page = info.iPage;

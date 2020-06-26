@@ -307,7 +307,7 @@
                         <input type="hidden" value="" name="id"/>
                         <div class="form-group">
                             <label >Nama Kategori</label>
-                            <input type="text" class="form-control" placeholder="Nama Kategori" name="nama" required/>
+                            <input type="text" class="form-control" placeholder="Nama Kategori" name="nama" onkeyup="this.value = this.value.toUpperCase()" required/>
                             <span class="help-block"></span>
                         </div>
                         <div class="form-group">

@@ -57,7 +57,7 @@ class M_pesanan extends CI_Model {
 			IF(tb_invoice.status ='Dikirim','<span class=\"label label-success\">Dikirim</span>',
 			IF(tb_invoice.status ='Selesai','<span class=\"label label-info\">Selesai</span>',
 			IF(tb_invoice.status ='Dibatalkan','<span class=\"label label-danger\">Dibatalkan</span>','Error' )))))) as status
-			,CONCAT('Rp.',tb_invoice.total) as total, tb_invoice.email");
+			,tb_invoice.total, tb_invoice.email");
 		$this->datatables->from($this->tablesaya);
 		$this->datatables->where('tb_orders.nama_vendor', $this->session->userdata('nama'));
 		$this->datatables->add_column('view', '

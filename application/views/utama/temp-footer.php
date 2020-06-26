@@ -17,16 +17,16 @@
     <div class="col-md-3 ">
       <h3>MENU</h3>
       <ul class="infoo">
-        <li><i class="fa fa-arrow-right"></i><a href="<?php echo site_url('contact'); ?>"> Kontak Kami</a></li>
+        <!-- <li><i class="fa fa-arrow-right"></i><a href="<?php echo site_url('kontak'); ?>"> Kontak Kami</a></li> -->
         <li><i class="fa fa-arrow-right"></i><a href="<?php echo site_url('welcome/cart') ?>"> Keranjang Belanja</a></li>
       <?php if ($this->session->userdata('user_logged_in') == 'Sudah_Loggin') { ?>
-        <li><i class="fa fa-arrow-right"></i><a href="<?php echo site_url('history') ?>"> Daftar Belanja</a></li>
+        <li><i class="fa fa-arrow-right"></i><a href="<?php echo site_url('riwayat') ?>"> Riwayat Belanja</a></li>
         <li><i class="fa fa-arrow-right"></i><a href="<?php echo site_url('welcome/logout') ?>"> Logout</a></li>
         <?php
       }else{
         ?>
-        <li><i class="fa fa-arrow-right"></i><a href="#" data-toggle="modal" data-target="#login-modal"> Login</a></li>
-        <li><i class="fa fa-arrow-right"></i><a href="<?php echo site_url('welcome/daftar') ?>"> Daftar</a></li>
+        <li><i class="fa fa-arrow-right"></i><a href="javascript:void(0)" onclick="login()"> Login</a></li>
+        <li><i class="fa fa-arrow-right"></i><a href="javascript:void(0)" onclick="tambah()"> Daftar</a></li>
         <?php
       }
       ?>

@@ -264,7 +264,7 @@
                 $('[name="alamat"]').val(data.alamat);
                 $('[name="email"]').val(data.email);
                 $('[name="status"]').val(data.status);
-                $('[name="password"]').val(data.password);
+                // $('[name="password"]').val(data.password);
                 $('#modal_form_view').modal('show'); // show bootstrap modal when complete loaded
                 $('.modal-title').text('View Vendor'); // Set title to Bootstrap modal title
                 if(data.gambar)
@@ -365,12 +365,12 @@
                                 <input type="hidden" name="id"/>
                                 <div class="form-group">
                                     <label >Nama Vendor</label>
-                                    <input type="text" class="form-control" placeholder="Nama User" name="nama" required/>
+                                    <input type="text" class="form-control" placeholder="Nama Vendor" name="nama" required/>
                                     <span class="help-block"></span>
                                 </div>
                                 <div class="form-group">
                                     <label >No Telp</label>
-                                    <input type="text" class="form-control" placeholder="Nilai" name="no_telp" onkeypress='return check_int(event)' maxlength="13" onchange="changeValue(this.value)" required/>
+                                    <input type="text" class="form-control" placeholder="No Telp" name="no_telp" onkeypress='return check_int(event)' maxlength="13" onchange="changeValue(this.value)" required/>
                                     <span class="help-block"></span>
                                 </div>
                                 <div class="form-group">
@@ -383,7 +383,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Foto</label><br>
+                                    <label>Foto</label><br>
                                     <div class="form-group" id="photo-preview">
                                         <div class="col-md-9">
                                             (Tidak ada photo)
@@ -409,7 +409,7 @@
                             <hr>
                             <div class="form-group">
                                 <label >Email</label>
-                                <input type="text" class="form-control" placeholder="Email" name="email" required/>
+                                <input type="email" class="form-control" placeholder="Email" name="email" required/>
                                 <span class="help-block"></span>
                             </div>
                             <div class="form-group">
@@ -450,12 +450,12 @@
                                 <input type="hidden" name="id"/>
                                 <div class="form-group">
                                     <label >Nama Vendor</label>
-                                    <input type="text" class="form-control" placeholder="Nama User" name="nama" readonly/>
+                                    <input type="text" class="form-control" placeholder="Nama Vendor" name="nama" readonly/>
                                     <span class="help-block"></span>
                                 </div>
                                 <div class="form-group">
                                     <label >No Telp</label>
-                                    <input type="text" class="form-control" placeholder="Nilai" name="no_telp" onkeypress='return check_int(event)' maxlength="13" onchange="changeValue(this.value)" readonly/>
+                                    <input type="text" class="form-control" placeholder="No Telp" name="no_telp" onkeypress='return check_int(event)' maxlength="13" onchange="changeValue(this.value)" readonly/>
                                     <span class="help-block"></span>
                                 </div>
                                 <div class="form-group">

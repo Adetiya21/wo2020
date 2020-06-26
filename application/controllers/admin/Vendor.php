@@ -81,6 +81,7 @@ class Vendor extends CI_Controller {
 					'no_telp' => $this->input->post('no_telp'),
 					'alamat' => $this->input->post('alamat'),
 					'email' => $this->input->post('email'),
+					'status' => $this->input->post('status'),
 					'slug' => $slug,
 					'password' => $pass
 				);
@@ -127,7 +128,7 @@ class Vendor extends CI_Controller {
 					'email' => $this->input->post('email'),
 					'status' => $this->input->post('status'),
 					'slug' => $slug,
-					'password' => $hash
+					// 'password' => $hash
 				);
 
 				if($this->input->post('remove_photo')) // hapus gambar
@@ -170,7 +171,7 @@ class Vendor extends CI_Controller {
 					'email' => $this->input->post('email'),
 					'status' => $this->input->post('status'),
 					'slug' => $slug,
-					'password' => $hash
+					// 'password' => $hash
 				);
 				
 				if($this->input->post('remove_photo')) // hapus gambar
@@ -237,12 +238,12 @@ class Vendor extends CI_Controller {
     		$data['status'] = FALSE;
     	}
 
-    	if($this->input->post('password') == '')
-    	{
-    		$data['inputerror'][] = 'password';
-    		$data['error_string'][] = 'Password harus diisi';
-    		$data['status'] = FALSE;
-    	} 
+    	// if($this->input->post('password') == '')
+    	// {
+    	// 	$data['inputerror'][] = 'password';
+    	// 	$data['error_string'][] = 'Password harus diisi';
+    	// 	$data['status'] = FALSE;
+    	// } 
 
     	if($data['status'] === FALSE)
     	{
