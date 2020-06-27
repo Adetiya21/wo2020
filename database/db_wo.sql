@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Waktu pembuatan: 26 Jun 2020 pada 23.34
+-- Waktu pembuatan: 27 Jun 2020 pada 14.32
 -- Versi server: 10.1.38-MariaDB
 -- Versi PHP: 7.3.3
 
@@ -241,6 +241,25 @@ INSERT INTO `tb_vendor` (`id`, `nama`, `slug`, `email`, `no_telp`, `alamat`, `pa
 (2, 'Vendor 2', '', 'vendor2@vendor.com', '080987654321', 'Jalan H.R.A.Rahman                                                ', '$2y$10$.q72Whwk8pf0qBdALGLGtuWcGdHeTqrbpCkIzVC0/yPD/oGxsLUkC', 'Menunggu', 'ba043cab9d91f5af0bac9cfa125eea80.jpg'),
 (3, 'Vendor 3', 'vendor-3', 'vendor3@vendor.com', '089669432192', 'Jalan Sulawesi', '$2y$10$7Snc8SrxvPVBgSnwYIlj2ORNXKheKvqnXei05xLskJnPXjQT4aGom', 'Diterima', 'e494f866f4660b05e4f9392bcd595260.jpg');
 
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tb_video_produk`
+--
+
+CREATE TABLE `tb_video_produk` (
+  `id` int(11) NOT NULL,
+  `id_produk` int(11) NOT NULL,
+  `video` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tb_video_produk`
+--
+
+INSERT INTO `tb_video_produk` (`id`, `id_produk`, `video`) VALUES
+(1, 1, '3884baa6279c87cf1ab3851ab6bbbb5f.mp4');
+
 --
 -- Indexes for dumped tables
 --
@@ -308,6 +327,13 @@ ALTER TABLE `tb_vendor`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indeks untuk tabel `tb_video_produk`
+--
+ALTER TABLE `tb_video_produk`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_produk` (`id_produk`);
+
+--
 -- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
@@ -364,6 +390,12 @@ ALTER TABLE `tb_ulasan`
 --
 ALTER TABLE `tb_vendor`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT untuk tabel `tb_video_produk`
+--
+ALTER TABLE `tb_video_produk`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)

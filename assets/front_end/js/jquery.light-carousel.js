@@ -88,19 +88,19 @@
 					setTimeout(autoTransition, options.interval);
 				}
 
-				function autoTransition() {
-					if(pause) {
-						pause = false;
-					} else {
-						if(selectedNumber == slideLength) {
-							selectedNumber = 0;
-						} else {
-							selectedNumber++;
-						}
-						changeSlide(selectedNumber);
-					}
-					setTimeout(autoTransition, options.interval);
-				}
+				// function autoTransition() {
+				// 	if(pause) {
+				// 		pause = false;
+				// 	} else {
+				// 		if(selectedNumber == slideLength) {
+				// 			selectedNumber = 0;
+				// 		} else {
+				// 			selectedNumber++;
+				// 		}
+				// 		changeSlide(selectedNumber);
+				// 	}
+				// 	setTimeout(autoTransition, options.interval);
+				// }
 
 				/* After resizing the window */
 				var resizeTimer = false;

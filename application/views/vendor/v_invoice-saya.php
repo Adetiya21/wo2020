@@ -147,7 +147,6 @@
     		render: function(data) {
     			total = data;
     			data = data-(data*2/100);
-    			// return 'Awal : '+total+'<br>Diterima: '+data;
 
     			var reverse = total.toString().split('').reverse().join(''),
 	            tribuan  = reverse.match(/\d{1,3}/g);
@@ -158,9 +157,8 @@
 	            dribuan  = dribuan.join('.').split('').reverse().join('');
 
 	            return 'Rp. '+tribuan+',-<hr>Diterima : <br> Rp. '+dribuan+',-';
-	            // return 'Rp. '+ribuan;
     		},
-              defaultContent: 'Gambar'
+            	defaultContent: 'harga_produk'
     	},
         {"data": "status"},
     	{"data": "view","orderable": false}

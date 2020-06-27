@@ -145,7 +145,7 @@
                       <thead>
                         <tr><th width="1%">No</th>
                         <th width="300px">Gambar</th>
-                        <th width="10%">Action</th>
+                        <th width="10%">Aksi</th>
                         </tr>
                       </thead>
                       <tbody>

@@ -124,6 +124,9 @@ class Produk extends CI_Controller {
             $query = $this->DButama->GetDBWhere('tb_gambar_produk', array('id_produk' => $data_id, ));
             $data['gambar_produk'] = $query;
 
+            $query = $this->DButama->GetDBWhere('tb_video_produk', array('id_produk' => $data_id, ));
+            $data['video_produk'] = $query;
+
             $ul=0;$ul1=0;$ul2=0;$ul3=0;$ul4=0;
             $jm=1;$jml=0;
 

@@ -36,15 +36,26 @@
                             <li> <img src="<?php echo base_url().'assets/assets/img/produk/'.$key->gambar?>" alt="Picture"> </li>
                             <?php
                             if ($gambar_produk->num_rows() >= 1) {
-                                      # code...
                               foreach ($gambar_produk->result() as $key2) {
-                                        # code...
                                   ?>
                                   <li> <img src="<?php echo base_url().'assets/assets/img/produk/'.$key2->gambar ?>" alt=""> </li>
                                   <?php
                               }
                             }
-                          ?>
+                            ?>
+                            <?php
+                            if ($video_produk->num_rows() >= 1) {
+                              foreach ($video_produk->result() as $key2) {
+                                  ?>
+                                  <li>
+                                    <video controls>
+                                      <source src="<?php echo base_url().'assets/assets/video/produk/'.$key2->video ?>">
+                                    </video>
+                                   <!-- <img src="<?php echo base_url().'assets/assets/video/produk/'.$key2->video ?>" alt=""> </li> -->
+                                  <?php
+                              }
+                            }
+                            ?>
                       </ul>
                       <div class="controls">
                         <div class="prev"></div>
@@ -61,8 +72,21 @@
                               <li> <img src="<?php echo base_url().'assets/assets/img/produk/'.$key2->gambar ?>" alt=""> </li>
                               <?php
                           }
-                      }
-                      ?>
+                        }
+                        ?>
+                        <?php
+                        if ($video_produk->num_rows() >= 1) {
+                          foreach ($video_produk->result() as $key2) {
+                              ?>
+                              <li>
+                                <video width="95px">
+                                  <source src="<?php echo base_url().'assets/assets/video/produk/'.$key2->video ?>">
+                                </video>
+                               <!-- <img src="<?php echo base_url().'assets/assets/video/produk/'.$key2->video ?>" alt=""> </li> -->
+                              <?php
+                          }
+                        }
+                        ?>
                   </ul>
               </div>
           </div>
@@ -81,8 +105,6 @@
             <ul class="nav nav-pills nav-justified">
                 <li class="active"><a href="#tab2-1" data-toggle="tab">Info Produk</a>
                 </li>
-                            <!-- <li class=""><a href="#tab2-2" data-toggle="tab">Saran Penyajian</a>
-                            </li> -->
                             <li class=""><a href="#tab2-2" data-toggle="tab">Review</a>
                             </li>
                         </ul>

@@ -68,6 +68,13 @@
 	border: none;
 	vertical-align: bottom;
 }
+.carousel video {
+	display: block;
+	width: 100%;
+	border: none;
+	/*height: 300px;*/
+	/*vertical-align: bottom;*/
+}
 .caption {
 	opacity: 0;
 	-webkit-transform: translate3d(30px, 0, 0);

@@ -69,6 +69,7 @@
                                         <th>Nama Produk</th>
                                         <th>Kategori Produk</th>
                                         <th>Kuantitas</th>
+                                        <th>Harga</th>
 										<th width="10%">Action</th>
 										</tr>
 									</thead>
@@ -142,9 +143,26 @@
         {"data": "nama"},
         {"data": "nama_kategori"},
         {"data": "kuantitas_penjualan"},
+        {"data": "harga",
+            render: function(data) {
+                total = data;
+                data = data-(data*2/100);
+
+                var reverse = total.toString().split('').reverse().join(''),
+                tribuan  = reverse.match(/\d{1,3}/g);
+                tribuan  = tribuan.join('.').split('').reverse().join('');
+
+                var reverse = data.toString().split('').reverse().join(''),
+                dribuan  = reverse.match(/\d{1,3}/g);
+                dribuan  = dribuan.join('.').split('').reverse().join('');
+
+                return 'Rp. '+tribuan+',-<hr>Diterima : <br> Rp. '+dribuan+',-';
+            },
+                defaultContent: 'harga'
+        },
         {"data": "view","orderable": false}
         ],
-        order: [[1, 'asc']],
+        order: [[1, 'desc']],
         rowCallback: function(row, data, iDisplayIndex) {
             var info = this.fnPagingInfo();
             var page = info.iPage;
