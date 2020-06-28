@@ -48,6 +48,9 @@ $tag = array('Wedding Organizer',$title.'|  Wedding Organizer' ,'Borneo', 'Ponti
     <!-- Theme stylesheet, if possible do not edit this stylesheet -->
     <link href="<?php echo base_url() ?>assets/front_end/css/style.default.css" rel="stylesheet" id="theme-stylesheet">
 
+    <!-- search -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400" rel="stylesheet" />
+    <link href="<?php echo base_url() ?>assets/front_end/search/css/main.css" rel="stylesheet" />
 
     <!-- Favicon and apple touch icons-->
     <link rel="shortcut icon" href="<?php echo base_url() ?>assets/front_end/images/icon/favicon.ico" type="image/x-icon" />
@@ -83,12 +86,21 @@ $tag = array('Wedding Organizer',$title.'|  Wedding Organizer' ,'Borneo', 'Ponti
                  <div id="top">
                     <div class="container">
                         <div class="row">
-                            <div class="col-xs-4 contact">
-                                <!-- <p class="hidden-sm hidden-xs">Contact <a href="tel:+6282253657711">+6282253657711</a> or <a href="mailto:support@masterbotanicals.com">support@masterbotanicals.com</a></p>
-                                <p class="hidden-md hidden-lg"><a href="tel:+6282253657711" data-animate-hover="pulse"><i class="fa fa-phone"></i></a>  <a href="mailto:support@masterbotanicals.com" data-animate-hover="pulse"><i class="fa fa-envelope"></i></a>
-                                </p> -->
+                            <div class="col-xs-3 contact">
+                                <!-- <input type="text" placeholder="Cari produk" class="form-control"> -->
+                                <div class="s128">
+                                  <?= form_open('produk/cari'); ?>
+                                    <div class="inner-form">
+                                      <div class="row">
+                                        <div class="input-field second">
+                                          <input type="search" placeholder="Cari Produk" name="cari"/>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  <?= form_close(); ?>
+                                </div>
                             </div>
-                            <div class="col-xs-8">
+                            <div class="col-xs-9">
                                 <div class="login" style="float: right;">
                                     <?php if ($this->session->userdata('user_logged_in') == 'Sudah_Loggin') {
                                         ?>
@@ -107,7 +119,7 @@ $tag = array('Wedding Organizer',$title.'|  Wedding Organizer' ,'Borneo', 'Ponti
                                     }else{
                                         ?>
                                         <a href="javascript:void(0)" onclick="login()"><span class="text-uppercase"><i class=" fa fa-sign-in"></i> <span class="text-uppercase">Login</span></a>
-                                        <a href="javascript:void(0)" onclick="tambah()"><span class="text-uppercase">Daftar</span></a>
+                                        <a href="javascript:void(0)" onclick="tambah()"><span class="text-uppercase"><i class=" fa fa-user"></i> Daftar</span></a>
                                         <?php
                                     }
                                     ?>
@@ -192,7 +204,7 @@ $tag = array('Wedding Organizer',$title.'|  Wedding Organizer' ,'Borneo', 'Ponti
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title" id="Login">Login Form</h4>
+                        <h4 class="modal-title" id="Login">Form Login Member</h4>
                     </div>
                     <div class="modal-body">
                         <form action="#" id="form-login" class="form-horizontal">
@@ -233,7 +245,7 @@ $tag = array('Wedding Organizer',$title.'|  Wedding Organizer' ,'Borneo', 'Ponti
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title" id="Daftar">Daftar Form</h4>
+                        <h4 class="modal-title" id="Daftar">Form Daftar Member</h4>
                     </div>
                     <div class="modal-body form">
                         <form action="#" id="form" class="form-horizontal">
@@ -261,7 +273,8 @@ $tag = array('Wedding Organizer',$title.'|  Wedding Organizer' ,'Borneo', 'Ponti
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <p>Powered by <a href="<?php echo site_url('') ?>">Wedding Organizer</a></p>
+                        <p>Tertarik menjadi salah satu Vendor WO HMProject? silahkan <a href="<?= site_url('vendor/') ?>"> klik disini !</a> </p>
+                        <!-- <p>Powered by <a href="<?php echo site_url('') ?>">Wedding Organizer</a></p> -->
                     </div>
                 </div>
             </div>
@@ -352,7 +365,6 @@ $tag = array('Wedding Organizer',$title.'|  Wedding Organizer' ,'Borneo', 'Ponti
                     {
                         $('#login-modal').modal('hide');
                         // location.reload();
-                        // window.open(<?= site_url('akun'); ?>);
                         location.replace('<?= site_url('akun'); ?>');
                         alert("Login berhasil")
                     } 
@@ -378,3 +390,33 @@ $tag = array('Wedding Organizer',$title.'|  Wedding Organizer' ,'Borneo', 'Ponti
     }
 
 </script>
+
+<script>
+      var btnDelete = document.getElementById('clear');
+      var inputFocus = document.getElementById('inputFocus');
+      //- btnDelete.on('click', function(e) {
+      //-   e.preventDefault();
+      //-   inputFocus.classList.add('isFocus')
+      //- })
+      //- inputFocus.addEventListener('click', function() {
+      //-   this.classList.add('isFocus')
+      //- })
+      btnDelete.addEventListener('click', function(e)
+      {
+        e.preventDefault();
+        inputFocus.value = ''
+      })
+      document.addEventListener('click', function(e)
+      {
+        if (document.getElementById('first').contains(e.target))
+        {
+          inputFocus.classList.add('isFocus')
+        }
+        else
+        {
+          // Clicked outside the box
+          inputFocus.classList.remove('isFocus')
+        }
+      });
+
+    </script>

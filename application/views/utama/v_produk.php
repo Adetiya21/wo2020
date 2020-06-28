@@ -26,6 +26,7 @@
         <div class="heading">
             <h3>Kategori</h3>
         </div>
+        <p><a href="<?= site_url('produk/semua') ?>"><i class="fa fa-book"></i> SEMUA PRODUK</a><hr></p>
         <?php foreach ($kat->result() as $key) { ?>
             <p><a href="<?= site_url('produk/i/'.$key->slug) ?>"><i class="fa fa-book"></i> <?= $key->nama ?></a></p>
         <?php } ?>

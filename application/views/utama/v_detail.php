@@ -120,16 +120,19 @@
                                               echo $key1->nama;
                                       ?>
                                     </p>
-                                    <h5>Alamat</h5>
-                                    <p><?php echo $key1->alamat; }}?></p>
+                                    <h5>Alamat Vendor</h5>
+                                    <p><?php echo $key1->alamat; ?></p>
+                                    <h5>Kontak Vendor</h5>
+                                    <p><i class="fa fa-instagram"></i>&nbsp;-&nbsp; <a href="https://www.instagram.com/<?= $key1->ig;?>" target="_blank"> @<?= $key1->ig;?></a>
+                                      <br><i class="fa fa-phone"></i>&nbsp;-&nbsp; <a href="https://api.whatsapp.com/send?phone=62<?= $key1->no_telp;?>&amp;" target="_blank"><?= $key1->no_telp; }}?></a></a></p>
                                     <h5>Tanggal Posting</h5>
                                     <p> <?php echo date('d F Y', strtotime($key->tgl)); ?></p>
                                 </div>
                                 <div class="col-md-6">
                                     <h4>Kategori Produk</h4>
-                                    <p><?php echo $key->nama_kategory ?></p>
+                                    <p style="font-size: 1.3em"><?php echo $key->nama_kategory ?></p>
                                     <h4>Harga</h4>
-                                    <p>Rp. <?php echo rupiah($key->harga) ?></p>
+                                    <p style="font-size: 1.5em">Rp. <?php echo rupiah($key->harga) ?></p>
                                     <h5>Stok</h5>
                                     <p><?php echo rupiah($key->kuantitas_penjualan) ?></p>
                                 </div>

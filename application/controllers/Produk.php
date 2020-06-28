@@ -239,6 +239,55 @@ class Produk extends CI_Controller {
         }
     }
 
+    public function cari($page=0)
+    {
+        $cari = $this->input->post('cari');
+        $cek = $this->db->query("SELECT * from tb_produk where nama like '%$cari%' ");
+        if ($cek->num_rows() != 0) {
+            $row = $cek->row();
+            $title['title']= 'Produk '.$cari.'' ;
+            $data['slug']= $row->slug;
+            
+            $jml = $cek;
+
+            $config['base_url'] = base_url('').'produk/cari/';
+            $config['total_rows'] = $jml->num_rows();;
+            $config['per_page'] = 12;
+            $config['uri_segment'] = 3;
+
+            /*Class bootstrap pagination yang digunakan*/
+            $config['full_tag_open'] = "<ul class='pagination pagination-sm' style='position:relative; top:-25px;'>";
+            $config['full_tag_close'] ="</ul>";
+            $config['num_tag_open'] = '<li>';
+            $config['num_tag_close'] = '</li>';
+            $config['cur_tag_open'] = "<li class='disabled'><li class='active'><a href='#'>";
+            $config['cur_tag_close'] = "<span class='sr-only'></span></a></li>";
+            $config['next_tag_open'] = "<li>";
+            $config['next_tagl_close'] = "</li>";
+            $config['prev_tag_open'] = "<li>";
+            $config['prev_tagl_close'] = "</li>";
+            $config['first_tag_open'] = "<li>";
+            $config['first_tagl_close'] = "</li>";
+            $config['last_tag_open'] = "<li>";
+            $config['last_tagl_close'] = "</li>";
+
+            $this->pagination->initialize($config);
+
+            $data['halaman']    = $this->pagination->create_links();
+            $cek = $this->db->like('nama',$cari);
+            $cek = $this->db->order_by('tgl', 'desc');
+            $cek = $this->db->get('tb_produk', $config['per_page'], $page);
+            $data['produk'] = $cek;
+            $data['ven'] = $this->DButama->GetDB('tb_vendor');
+            $data['kat'] = $this->DButama->GetDB('tb_kategori_produk');
+            $this->load->view('utama/temp-header',$title);
+            $this->load->view('utama/v_produk-cari',$data);
+            $this->load->view('utama/temp-footer');
+        }else{
+            redirect('error404','refresh');
+        }
+    }
+
 }
 
 /* End of file Produk.php */

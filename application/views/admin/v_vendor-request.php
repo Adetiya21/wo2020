@@ -377,6 +377,11 @@
                                     <span class="help-block"></span>
                                 </div>
                                 <div class="form-group">
+                                    <label >Instagram</label>
+                                    <input type="text" class="form-control" placeholder="Instagram" name="ig" required/>
+                                    <span class="help-block"></span>
+                                </div>
+                                <div class="form-group">
                                     <label >Alamat</label>
                                     <textarea class="form-control" name="alamat" required/></textarea>
                                     <span class="help-block"></span>
@@ -459,6 +464,11 @@
                                 <div class="form-group">
                                     <label >No Telp</label>
                                     <input type="text" class="form-control" placeholder="No Telp" name="no_telp" onkeypress='return check_int(event)' maxlength="13" onchange="changeValue(this.value)" readonly/>
+                                    <span class="help-block"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label >Instagram</label>
+                                    <input type="text" class="form-control" placeholder="Instagram" name="ig" readonly/>
                                     <span class="help-block"></span>
                                 </div>
                                 <div class="form-group">

@@ -223,6 +223,7 @@
                 $('[name="alamat"]').val(data.alamat);
                 $('[name="status"]').val(data.status);
                 $('[name="email"]').val(data.email);
+                $('[name="ig"]').val(data.ig);
                 // $('[name="password"]').val(data.password);
                 $('#modal_form').modal('show'); // show bootstrap modal when complete loaded
                 $('.modal-title').text('Edit Vendor'); // Set title to Bootstrap modal title
@@ -263,6 +264,7 @@
                 $('[name="no_telp"]').val(data.no_telp);
                 $('[name="alamat"]').val(data.alamat);
                 $('[name="email"]').val(data.email);
+                $('[name="ig"]').val(data.ig);
                 $('[name="status"]').val(data.status);
                 // $('[name="password"]').val(data.password);
                 $('#modal_form_view').modal('show'); // show bootstrap modal when complete loaded
@@ -374,6 +376,11 @@
                                     <span class="help-block"></span>
                                 </div>
                                 <div class="form-group">
+                                    <label >Instagram</label>
+                                    <input type="text" class="form-control" placeholder="Instagram" name="ig" required/>
+                                    <span class="help-block"></span>
+                                </div>
+                                <div class="form-group">
                                     <label >Alamat</label>
                                     <textarea class="form-control" name="alamat" required/></textarea>
                                     <span class="help-block"></span>
@@ -456,6 +463,11 @@
                                 <div class="form-group">
                                     <label >No Telp</label>
                                     <input type="text" class="form-control" placeholder="No Telp" name="no_telp" onkeypress='return check_int(event)' maxlength="13" onchange="changeValue(this.value)" readonly/>
+                                    <span class="help-block"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label >Instagram</label>
+                                    <input type="text" class="form-control" placeholder="Instagram" name="ig" readonly/>
                                     <span class="help-block"></span>
                                 </div>
                                 <div class="form-group">

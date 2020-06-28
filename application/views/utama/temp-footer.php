@@ -17,7 +17,7 @@
     <div class="col-md-3 ">
       <h3>MENU</h3>
       <ul class="infoo">
-        <!-- <li><i class="fa fa-arrow-right"></i><a href="<?php echo site_url('kontak'); ?>"> Kontak Kami</a></li> -->
+        <li><i class="fa fa-arrow-right"></i><a href="<?php echo site_url('tentang'); ?>"> Tentang Kami</a></li>
         <li><i class="fa fa-arrow-right"></i><a href="<?php echo site_url('welcome/cart') ?>"> Keranjang Belanja</a></li>
       <?php if ($this->session->userdata('user_logged_in') == 'Sudah_Loggin') { ?>
         <li><i class="fa fa-arrow-right"></i><a href="<?php echo site_url('riwayat') ?>"> Riwayat Belanja</a></li>
@@ -30,7 +30,9 @@
         <?php
       }
       ?>
-    </ul>
+    </ul><hr>
+    <h3>VENDOR</h3>
+    <p>Tertarik menjadi salah satu Vendor WO HMProject? silahkan <a href="<?= site_url('vendor/') ?>"> klik disini !</a> </p>
   </div>
   <div class="clearfix"> </div>
 </div>
@@ -47,7 +49,7 @@
             <div class="container">
               <div class="col-md-12">
                 <p class="pull-left">Copyright &copy; 2020. AllRight Reserved.</p>
-                <p class="pull-right"><a href="<?php echo site_url('welcome/about'); ?>">Privacy Policy</a> | <a href="<?php echo site_url('welcome/about'); ?>"> Terms & Conditions</a></p>
+                <p class="pull-right" style="margin-top: -10px;margin-bottom: -10px;"><img src="<?= base_url('assets/front_end/images/logo/atmbersama.png') ?>" alt="" width="80px"></p>
               </div>
             </div>
           </div>

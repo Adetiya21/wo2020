@@ -36,7 +36,7 @@
                     <div class="p-3">
                         <img src="<?= base_url('assets/') ?>assets/images/big/icon.png" alt="wrapkit">
                         <h2 class="mt-3 text-center">Daftar Gratis Sekarang</h2>
-                        <p class="text-center">Daftarkan diri anda kemudian lakukan sewa sesuai keinginan!</p>
+                        <p class="text-center">Daftarkan diri anda sebagai vendor gratis!</p>
                         <?= $this->session->flashdata('pesan'); ?>
                         <?= $this->session->flashdata('error'); ?>
                         <?= form_open('vendor/welcome/daftar'); ?>
@@ -64,7 +64,7 @@
                                     <hr>
                                 </div>
                                 <div class="col-lg-12 text-center">
-                                    Sudah punya akun? <a href="<?= site_url('welcome') ?>" class="text-danger">Login Sekarang!</a>
+                                    Sudah punya akun? <a href="<?= site_url('vendor') ?>" class="text-danger">Login Sekarang!</a>
                                 </div>
                             </div>
                         <?= form_close(); ?>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Waktu pembuatan: 27 Jun 2020 pada 14.32
+-- Waktu pembuatan: 28 Jun 2020 pada 13.32
 -- Versi server: 10.1.38-MariaDB
 -- Versi PHP: 7.3.3
 
@@ -76,7 +76,7 @@ CREATE TABLE `tb_invoice` (
 --
 
 INSERT INTO `tb_invoice` (`id`, `email`, `invoice`, `tgl`, `status`, `payment`, `total`, `gambar`) VALUES
-(1, 'member1@member.com', 'HMP-2706200001', '2020-06-27 04:22:57', 'Menunggu Pembayaran', 'Transfer Bank', 9600000, ''),
+(1, 'member1@member.com', 'HMP-2706200001', '2020-06-27 04:22:57', 'Proses', 'Transfer Bank', 9600000, 'b2c6c02936c6655c5a972a714be683c3.png'),
 (2, 'member1@member.com', 'HMP-2706200002', '2020-06-27 04:24:40', 'Proses', 'Cash on Delivery', 5000000, '');
 
 -- --------------------------------------------------------
@@ -192,7 +192,8 @@ INSERT INTO `tb_produk` (`id`, `id_kategori`, `id_vendor`, `nama`, `harga`, `kua
 (3, 3, 1, 'Dekorasi Mewah', 12000000, -1, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', '6dca69ea4b3702916602ec97f85cf9e1.jpg', '2020-06-15', 'dekorasi-mewah'),
 (4, 1, 3, 'Henna Sederhana', 100000, 9, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 'fe6b5868482deaece9d68f3556a7c742.jpg', '2020-06-21', 'henna-sederhana'),
 (5, 2, 1, 'Makeup Artis', 2000000, 7, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 'dfa72e79ec97799147d49bea8f3bd193.jpg', '2020-06-27', 'makeup-artis'),
-(6, 3, 3, 'Dekorasi Biasa', 7500000, 3, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.				                        				                        				                        ', '7fc01ab246c562bdc39d11940add47c8.jpg', '2020-06-27', 'dekorasi-biasa');
+(6, 3, 3, 'Dekorasi Biasa', 7500000, 3, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.				                        				                        				                        ', '7fc01ab246c562bdc39d11940add47c8.jpg', '2020-06-27', 'dekorasi-biasa'),
+(7, 2, 1, 'Make Up Terbaru', 450000, 3, '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\r\n\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\r\n\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\r\n', '25a15d251fd34d64e7bf6df55c8e79be.jpg', '2020-06-28', 'make-up-terbaru');
 
 -- --------------------------------------------------------
 
@@ -226,6 +227,7 @@ CREATE TABLE `tb_vendor` (
   `slug` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
   `no_telp` varchar(13) NOT NULL,
+  `ig` varchar(100) NOT NULL,
   `alamat` text NOT NULL,
   `password` varchar(255) NOT NULL,
   `status` enum('Menunggu','Diterima') NOT NULL,
@@ -236,10 +238,10 @@ CREATE TABLE `tb_vendor` (
 -- Dumping data untuk tabel `tb_vendor`
 --
 
-INSERT INTO `tb_vendor` (`id`, `nama`, `slug`, `email`, `no_telp`, `alamat`, `password`, `status`, `gambar`) VALUES
-(1, 'Vendor 1', 'vendor-1', 'vendor1@vendor.com', '081234567890', 'Jalan Ayani 2                        ', '$2y$10$BWzc5mn7Y6fIApqQpHcCROGI/RrQR8oFQnkUdBdd5d0D20Tr3CICG', 'Diterima', '4a2813f55d870685f47e34c6f67c0c76.jpg'),
-(2, 'Vendor 2', '', 'vendor2@vendor.com', '080987654321', 'Jalan H.R.A.Rahman                                                ', '$2y$10$.q72Whwk8pf0qBdALGLGtuWcGdHeTqrbpCkIzVC0/yPD/oGxsLUkC', 'Menunggu', 'ba043cab9d91f5af0bac9cfa125eea80.jpg'),
-(3, 'Vendor 3', 'vendor-3', 'vendor3@vendor.com', '089669432192', 'Jalan Sulawesi', '$2y$10$7Snc8SrxvPVBgSnwYIlj2ORNXKheKvqnXei05xLskJnPXjQT4aGom', 'Diterima', 'e494f866f4660b05e4f9392bcd595260.jpg');
+INSERT INTO `tb_vendor` (`id`, `nama`, `slug`, `email`, `no_telp`, `ig`, `alamat`, `password`, `status`, `gambar`) VALUES
+(1, 'Vendor 1', 'vendor-1', 'vendor1@vendor.com', '081234567890', 'ade_bput', 'Jalan Ayani 2', '$2y$10$l.XcWP7cilTt7B1/BdaLjOa0eKMxvOJ.eZZFrMVm6NnfHInXLzeVC', 'Diterima', '4a2813f55d870685f47e34c6f67c0c76.jpg'),
+(2, 'Vendor 2', '', 'vendor2@vendor.com', '080987654321', '', 'Jalan H.R.A.Rahman                                                ', '$2y$10$.q72Whwk8pf0qBdALGLGtuWcGdHeTqrbpCkIzVC0/yPD/oGxsLUkC', 'Menunggu', 'ba043cab9d91f5af0bac9cfa125eea80.jpg'),
+(3, 'Vendor 3', 'vendor-3', 'vendor3@vendor.com', '089669432192', 'ade_bput', 'Jalan Sulawesi', '$2y$10$7Snc8SrxvPVBgSnwYIlj2ORNXKheKvqnXei05xLskJnPXjQT4aGom', 'Diterima', 'e494f866f4660b05e4f9392bcd595260.jpg');
 
 -- --------------------------------------------------------
 
@@ -353,7 +355,7 @@ ALTER TABLE `tb_gambar_produk`
 -- AUTO_INCREMENT untuk tabel `tb_invoice`
 --
 ALTER TABLE `tb_invoice`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_kategori_produk`
@@ -371,13 +373,13 @@ ALTER TABLE `tb_member`
 -- AUTO_INCREMENT untuk tabel `tb_orders`
 --
 ALTER TABLE `tb_orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_produk`
 --
 ALTER TABLE `tb_produk`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_ulasan`

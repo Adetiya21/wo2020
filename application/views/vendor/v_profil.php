@@ -118,6 +118,15 @@
                       </div>
                     </div>
                     <div class="form-group row">
+                      <label class="col-sm-2 col-form-label">Nama Instagram</label>
+                      <div class="col-sm-10 input-group">
+                        <span class="input-group-prepend" id="basic-addon2">
+                          <label class="input-group-text">@</label>
+                        </span>
+                        <input type="text" name="ig" class="form-control" value="<?= $profil->ig ?>" name="ig">
+                      </div>
+                    </div>
+                    <div class="form-group row">
                       <label class="col-sm-2 col-form-label">Alamat</label>
                       <div class="col-sm-10">
                         <textarea class="form-control" name="alamat"><?= $profil->alamat ?>
