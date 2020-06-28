@@ -122,7 +122,7 @@ class Produk extends CI_Controller {
 	{
 		$cek = $this->DButama->GetDBWhere($this->tableuser,array('id'=> $this->session->userdata('id')));
 		if ($cek->num_rows() == 1) {
-			$cek1 = $this->DButama->GetDBWhere($this->table,array('id'=> $id));
+			$cek1 = $this->DButama->GetDBWhere($this->table,array('id'=> $id, 'id_vendor' => $this->session->userdata('id')));
 			if ($cek1->num_rows() == 1) {
 				$data['produk'] = $cek1->row();
 				$data['profil'] = $cek->row();

@@ -25,7 +25,7 @@ class Produk_gambar extends CI_Controller {
 		$cek1 = $this->DButama->GetDBWhere($this->tableuser,array('id'=> $this->session->userdata('id')));
 		if ($cek1->num_rows() == 1) {
 			$data['profil'] = $cek1->row();	
-			$cek = $this->DButama->GetDBWhere('tb_produk',array('id'=> $id));
+			$cek = $this->DButama->GetDBWhere('tb_produk',array('id'=> $id, 'id_vendor' => $this->session->userdata('id')));
 			if ($cek->num_rows() == 1) {
 				$data['title'] = ' Tambah Gambar Produk';
 				$data['produk'] = $cek->row();
