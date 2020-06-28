@@ -1,7 +1,7 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 <?php 
   if ($this->session->userdata('vendor_logged_in') == 'Sudah_Loggin'){
-    redirect('vendor/home/profil','refresh');
+    redirect('vendor/home','refresh');
   }
 ?>
 
