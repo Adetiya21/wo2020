@@ -116,6 +116,7 @@ class Welcome extends CI_Controller {
 							</div>');
 				redirect('welcome/form_daftar','refresh');
 			}else{
+				$slug = url_title($this->input->post('nama'), 'dash', TRUE);
 				$pass=$this->input->post('password');
 				$hash=password_hash($pass, PASSWORD_DEFAULT);
 				$data = array(
