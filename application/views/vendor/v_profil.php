@@ -81,7 +81,8 @@
                 <div class="card-block" data-intro="This is Card body" data-step="2" data-hint="Hello step osne!">
                   <!-- <form id="main" method="post" action="https://colorlib.com/" novalidate> -->
                   <?= $this->session->flashdata('pesan'); ?>
-                              <?= $this->session->flashdata('error'); ?>
+                  <?= $this->session->flashdata('error'); ?>
+                  
                               <?php $arb = array('enctype' => "multipart/form-data", );?>
                               <?= form_open('/vendor/home/edit_profil',$arb); ?>
                               

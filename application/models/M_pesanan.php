@@ -40,8 +40,6 @@ class M_pesanan extends CI_Model {
 		$this->datatables->add_column('view', '
 			<div align="center">
 			<a class="btn btn-primary btn-rounded btn-sm" href="'.site_url("vendor/pesanan/detail/$1").'"><span class="fa fa-eye"></span></a>
-			<a class="btn btn-warning btn-rounded btn-sm" href="javascript:void(0)" title="Edit" onclick="edit($2)"> <span class="fa fa-edit"></span></a>
-			<a class="btn btn-danger btn-rounded btn-sm" href="javascript:void(0)" title="Hapus" onclick="hapus($2)" > <span class="fa fa-trash"></span></a>
 			</div>', 'invoice,id');
 		$this->datatables->join('tb_orders','tb_orders.code_invoice = tb_invoice.invoice');
 		$this->datatables->group_by('tb_invoice.invoice');

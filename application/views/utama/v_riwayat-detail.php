@@ -36,7 +36,7 @@
             <div class="col-md-9 clearfix">
                 <p class="lead">Invoice <b><?= $this->uri->segment(3) ?></b> dipesan pada <strong><?= date('d F Y', strtotime($invoice->tgl)) ?></strong>,
                     status sekarang <strong><?= $invoice->status ?></strong>.</p>
-                    <p><b>Hai, silakan kirim bukti pembayaran anda pada form konfirmasi. Dan jika Anda memiliki pertanyaan, silakan <a href="<?php echo site_url('contact') ?>">Hubungi Kami</a>.<br>Happy Shopping!</p>
+                    <p><b>Hai, silakan kirim bukti pembayaran anda pada form konfirmasi.<br>Happy Shopping!</p>
 
                 <div class="box">
                     <div class="table-responsive">

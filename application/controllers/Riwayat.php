@@ -79,6 +79,7 @@ class Riwayat extends CI_Controller {
 			        	);
 			        	$where = array('invoice' => $this->input->post('invoice') , 'email' => $this->session->userdata('email')  );
 	      				$this->DButama->UpdateDB('tb_invoice',$where,$data);
+	      				echo '<script type="text/javascript">alert("Bukti Pembayaran Berhasil Dikirim");</script>';
 			        	redirect('riwayat/detail/'.$this->input->post('invoice'),'refresh');
 			        }
 		    	}

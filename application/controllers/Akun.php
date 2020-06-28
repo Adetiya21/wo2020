@@ -37,8 +37,11 @@ class Akun extends CI_Controller {
 			$this->form_validation->set_rules($config);
 			if ($this->form_validation->run() == FALSE)
 			{
-				$this->session->set_flashdata('error', validation_errors());
-				redirect('Address/tambah','refresh');
+				$this->session->set_flashdata('error', '<div class="alert alert-danger alert-dismissible" role="alert">
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<strong>'.validation_errors().'</strong> 
+						</div>');
+				redirect('akun','refresh');
 			}else{
 				$data = array(
 					'nama' => $this->input->post('nama'),

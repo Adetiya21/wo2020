@@ -160,14 +160,26 @@ class Welcome extends CI_Controller {
 							$sess_data['nama'] = $key->nama;
 							$sess_data['slug'] = $key->slug;
 							$sess_data['email'] = $key->email;
+							$sess_data['alamat'] = $key->alamat;
 							$sess_data['id'] = $key->id;
 							$this->session->set_userdata($sess_data);
 							$this->session->unset_userdata('vendor_logged_in');
-							$page = $_SERVER['PHP_SELF'];
-							$sec = "1";
-							header("Refresh: $sec; url=$page");
+							// $page = $_SERVER['PHP_SELF'];
+							// $sec = "1";
+							// header("Refresh: $sec; url=$page");
+
+							if ($key->alamat!=null) {
+								echo json_encode(array("status" => TRUE));
+							} else { 
+								echo json_encode(array("status1" => TRUE));
+							}
 							// redirect('akun','refresh');
-							echo json_encode(array("status" => TRUE));
+							// echo '<script>alert("Login berhasil")</script>';
+							// if ($key->alamat!=null) {
+							// 	redirect('vendor/home', 'refresh');	
+							// } else { 
+							// redirect('vendor/home/profil', 'refresh');
+							// }
 						}
 					}
 				}

@@ -364,9 +364,16 @@ $tag = array('Wedding Organizer',$title.'|  Wedding Organizer' ,'Borneo', 'Ponti
                     if(data.status) //if success close modal and reload ajax table
                     {
                         $('#login-modal').modal('hide');
+                        location.reload();
+                        // location.replace('<?= site_url('akun'); ?>');
+                        alert("Login berhasil");                       
+                    } 
+                    if(data.status1) //if success close modal and reload ajax table
+                    {
+                        $('#login-modal').modal('hide');
                         // location.reload();
                         location.replace('<?= site_url('akun'); ?>');
-                        alert("Login berhasil")
+                        alert("Login berhasil");                       
                     } 
                     $('#btnSave').text('save'); //change button text
                     $('#btnSave').attr('disabled',false); //set button enable
@@ -394,13 +401,6 @@ $tag = array('Wedding Organizer',$title.'|  Wedding Organizer' ,'Borneo', 'Ponti
 <script>
       var btnDelete = document.getElementById('clear');
       var inputFocus = document.getElementById('inputFocus');
-      //- btnDelete.on('click', function(e) {
-      //-   e.preventDefault();
-      //-   inputFocus.classList.add('isFocus')
-      //- })
-      //- inputFocus.addEventListener('click', function() {
-      //-   this.classList.add('isFocus')
-      //- })
       btnDelete.addEventListener('click', function(e)
       {
         e.preventDefault();
