@@ -114,7 +114,7 @@
 				                    <div class="form-group row">
 				                      <label class="col-sm-2 col-form-label">Deskripsi</label>
 				                      <div class="col-sm-10">
-				                        <textarea class="form-control" name="deskripsi" rows="5"><?= $produk->deskripsi ?>
+				                        <textarea class="form-control" name="deskripsi" rows="5" id="editor1"><?= $produk->deskripsi ?>
 				                        </textarea> 
 				                      </div>
 				                    </div>
@@ -186,24 +186,24 @@
 			$("#earned_price").html(ribuan);
 		});
 	</script>
-
-<script type="0c02f9e383c53a06f1a03b30-text/javascript" src="<?= base_url('assets/') ?>bower_components/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
-<script type="0c02f9e383c53a06f1a03b30-text/javascript" src="<?= base_url('assets/') ?>assets/pages/advance-elements/bootstrap-datetimepicker.min.js"></script>
-
-<script type="0c02f9e383c53a06f1a03b30-text/javascript" src="<?= base_url('assets/') ?>bower_components/bootstrap-daterangepicker/js/daterangepicker.js"></script>
-
-<script type="0c02f9e383c53a06f1a03b30-text/javascript" src="<?= base_url('assets/') ?>bower_components/datedropper/js/datedropper.min.js"></script>
-
+	
 <script src="<?= base_url('assets/') ?>assets/pages/waves/js/waves.min.js" type="80e04729b0cb0dda322eaea3-text/javascript"></script>
 
 <script src="<?= base_url('assets/') ?>bower_components/jquery.steps/js/jquery.steps.js" type="80e04729b0cb0dda322eaea3-text/javascript"></script>
 <script src="<?= base_url('assets/') ?>bower_components/jquery-validation/js/jquery.validate.js" type="80e04729b0cb0dda322eaea3-text/javascript"></script>
 
 <script type="80e04729b0cb0dda322eaea3-text/javascript" src="<?= base_url('assets/') ?>assets/pages/form-validation/validate.js"></script>
-<link rel="stylesheet" type="text/css" href="<?= base_url('assets/') ?>bower_components/datedropper/css/datedropper.min.css" />
-<script src="<?= base_url('assets/') ?>assets/pages/forms-wizard-validation/form-wizard.js" type="80e04729b0cb0dda322eaea3-text/javascript"></script>
 
 <script src="<?= base_url('assets/') ?>ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js" data-cf-settings="80e04729b0cb0dda322eaea3-|49" defer=""></script></body>
 
-<!-- Mirrored from colorlib.com//polygon/admindek/default/form-wizard.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 08 Jun 2020 14:36:31 GMT -->
-</html>
+<!-- ckeditor -->
+<script src="<?= base_url('assets/') ?>bower_components/ckeditor/ckeditor.js"></script>
+<script>
+  $(function () {
+    // Replace the <textarea id="editor1"> with a CKEditor
+    // instance, using default configuration.
+    CKEDITOR.replace('editor1')
+    //bootstrap WYSIHTML5 - text editor
+    $('.textarea').wysihtml5()
+  })
+</script>
