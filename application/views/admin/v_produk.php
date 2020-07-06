@@ -167,7 +167,7 @@
         {
             // ajax delete data to database
             $.ajax({
-                url : '<?php echo site_url("admin/kategori/hapus/'+id+'") ?>',
+                url : '<?php echo site_url("admin/produk/hapus/'+id+'") ?>',
                 type: "POST",
                 dataType: "JSON",
                 data: { <?= $this->security->get_csrf_token_name(); ?> : function () {

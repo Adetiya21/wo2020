@@ -60,12 +60,12 @@
                     <?php
                     foreach ($pr->result() as $key1) {
                     ?>
-                    <li class="item" style="height: 450px">
+                    <li class="item" style="height: 480px">
                         <a href="<?= site_url('produk/detail/'.$key1->slug) ?>" >
                         <div class="testimonial same-height-always"> 
                             <img src="<?php echo base_url('assets/assets/img/produk/'.$key1->gambar); ?>" alt="gambar" class="img-responsive" style="width: 100%; height: 200px">
                             <div class="text">
-                                <h3><?= $key1->nama; ?></h3>
+                                <h3 style="text-align: left;"><?= $key1->nama; ?></h3>
                                 <h6 style="margin-top: -10px;margin-bottom: -10px;"><?php
                                     foreach ($ven->result() as $key2) {
                                         if ($key2->id==$key1->id_vendor) {

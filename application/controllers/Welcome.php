@@ -20,7 +20,7 @@ class Welcome extends CI_Controller {
 	public function index()
 	{
 		$data['title'] = 'Selamat Datang';
-		$data['kategory_produk'] =  $this->db->order_by('nama', 'asc');
+		$data['kategory_produk'] =  $this->db->order_by('id', 'desc');
 		$data['kategory_produk'] = $this->DButama->GetDB('tb_kategori_produk');
 		$data['pr'] = $this->db->order_by('tgl', 'desc');
 		$data['pr'] = $this->db->limit('5');

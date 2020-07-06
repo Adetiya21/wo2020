@@ -84,7 +84,7 @@ class Vendor extends CI_Controller {
 					'ig' => $this->input->post('ig'),
 					'status' => $this->input->post('status'),
 					'slug' => $slug,
-					'password' => $pass
+					'password' => $hash
 				);
 				$gambar = $_FILES['gambar']['name'];
 				if(!empty($gambar))

@@ -114,7 +114,7 @@ class Welcome extends CI_Controller {
 							<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 							<strong>Email sudah terdaftar</strong> 
 							</div>');
-				redirect('welcome/form_daftar','refresh');
+				redirect('vendor/welcome/form_daftar','refresh');
 			}else{
 				$slug = url_title($this->input->post('nama'), 'dash', TRUE);
 				$pass=$this->input->post('password');

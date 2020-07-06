@@ -76,12 +76,7 @@ class Produk extends CI_Controller {
 			$this->_Values();
 			redirect('admin/produk/tambah','refresh');
 		}else{
-			$DataUser  = array('nama' => $this->input->post('nama'));
-			if ($this->DButama->GetDBWhere($this->table,$DataUser)->num_rows() == 1) {
-				$this->_Values();
-				$this->session->set_flashdata('error', 'Nama Produk Sama / Tidak Boleh Duplikat');
-				redirect('admin/produk/tambah','refresh');
-			}else{
+			
 				$slug = url_title($this->input->post('nama'), 'dash', TRUE);
 				$data = array(
 					'id_kategori' => $this->input->post('id_kategori'),
@@ -103,7 +98,7 @@ class Produk extends CI_Controller {
 
 				$this->DButama->AddDB($this->table,$data);
 				redirect('admin/produk','refresh');
-			}
+			
 		}
 	}
 
